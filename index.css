@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Noto Sans Arabic', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    min-height: 100vh;
+    color: #e2e8f0;
+  }
+}
+
+@layer components {
+  .pixel-border {
+    border-style: solid;
+    border-width: 4px;
+    border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12'%3E%3Cpath d='M0,0 L12,0 L12,12 L0,12 Z' fill='none' stroke='%235B7C3A' stroke-width='2'/%3E%3C/svg%3E") 4;
+  }
+
+  .minecraft-button {
+    @apply px-6 py-3 bg-minecraft-green text-white font-bold transition-all duration-300;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .minecraft-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(91, 124, 58, 0.3);
+  }
+
+  .minecraft-button:active {
+    transform: translateY(0);
+  }
+
+  .animated-bg {
+    background: linear-gradient(-45deg, #1a1a2e, #16213e, #0f3460, #533483);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+
+  .block-3d {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+    }
